@@ -7,12 +7,12 @@
 # ########################################
 # Step 1 -- Set up initial environment
 # ########################################
-BREW_PREFIX=$(brew --prefix)
+BREW_PREFIX=$(brew --prefix)   # Most likely "/usr/local"
 
 ### Make PATH from scratch
-PATH="/Users/dg/Projects/Programming/lib/anaconda/bin"
-PATH="${PATH}:${BREW_PREFIX}/bin:/usr/bin"   # Order of these two matters
-PATH="${PATH}:/bin:/usr/sbin:/Developer/usr/bin:/sbin:/usr/texbin:/usr/X11/bin:/Users/dg/bin"
+PATH="${BREW_PREFIX}/bin:/usr/bin"   # Order of these two matters
+PATH="${PATH}:/bin:/usr/sbin:/sbin:/usr/X11/bin"
+PATH="${PATH}:/Developer/usr/bin"   # Location of XCode binaries
 
 ### Compiler environment variables
 CC="/usr/bin/gcc-4.2"
