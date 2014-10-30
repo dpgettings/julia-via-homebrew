@@ -9,10 +9,11 @@
 # ########################################
 BREW_PREFIX=$(brew --prefix)   # Most likely "/usr/local"
 
-### Make PATH from scratch
+### Make new PATH with important things front-loaded
+OLDPATH=$PATH
 PATH="${BREW_PREFIX}/bin:/usr/bin"   # Order of these two matters
-PATH="${PATH}:/bin:/usr/sbin:/sbin:/usr/X11/bin"
 PATH="${PATH}:/Developer/usr/bin"   # Location of XCode binaries
+PATH="${PATH}:${OLDPATH}"
 
 ### Compiler environment variables
 CC="/usr/bin/gcc-4.2"
